@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Index from "./Component/Index";  
+import Loading from "./Component/Loading";
+import './css/style.css'
+const url = 'https://api.github.com/users'
+
 
 function App() {
+  const [loading, setloading] = useState(true)
+  const fetching = async()=>{
+    const question = await fetch(url)
+    const response = await question.json()
+    console.log(response);
+    setloading(false)
+  } 
+  useEffect(()=>{
+    fetching()
+  },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<>
+<div>
+      {loading? <Loading/> :  <Index/>}
     </div>
+</>
   );
 }
 

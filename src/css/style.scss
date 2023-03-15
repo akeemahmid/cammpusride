@@ -1,0 +1,1513 @@
+@import "./mixings";
+@import "./color";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  .links {
+    text-decoration: none;
+    font-size: 20px;
+  }
+  #links {
+    margin-top: 20px;
+    color: whitesmoke;
+    padding: 10px 20px;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    background: $SecondaryColor;
+    transition: 1s;
+    font-weight: 600;
+
+    @include mobile{
+      padding: 7px 15px;
+      font-size: 20px;
+      border-top-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    &:hover {
+      color: $HoverColor;
+      border: none;
+      background: whitesmoke;
+      border-radius: 5px;
+    }
+  }
+  h1 {
+    font-size: 40px;
+    text-align: left;
+    color: $NeutralColor;
+    margin-bottom: 20px;
+
+    @include Tablet{
+      font-size: 35px;
+    }
+
+    @include mobile{
+    font-size: 27px;
+    text-align: left;
+    color: $NeutralColor;
+    margin-bottom: 15px;
+    }
+  }
+}
+nav {
+  @include flexes(flex, space-between, center, row);
+  background: $PrimaryColor;
+  box-shadow: $Shadow;
+  padding: 10px 40px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 3;
+
+  .Menu{
+    padding: 10px;
+    background: $SecondaryColor;
+    display: none;
+    border-radius: 5px;
+
+    @include mobile{
+      display: block;
+    }
+}
+.Fatimes{
+  display: none;
+
+  @include mobile{
+    display: block;
+    position: absolute;
+    color: red;
+    top: 10%;
+    right: 10%;
+    font-size: 25px;
+    z-index: 7;
+  }
+}
+
+  .ToggleBar{
+    display: none;
+  }
+
+  @include mobile{
+    padding: 10px 20px;
+
+    .ToggleBar{
+      display: block;
+    }
+    
+  }
+  
+
+
+  .logo {
+    font-size: 40px;
+    font-weight: 500;
+
+
+    @include mobile{
+      font-size: 25px;
+      font-weight: 500;
+    }
+  }
+
+  .SideNav {
+    @include flexes(flex, center, center, row);
+    list-style-type: none;
+    transition: 1s;
+
+    // @include mobile {
+    //   @include flexes(flex, center, center, column);
+
+    // }
+    @include mobile {
+      position: fixed;
+      z-index: 5;
+      top: 0;
+      right: -300px;
+      @include flexes(flex, center, center, column);
+        width: 300px;
+        height: 500px;
+        background: linear-gradient(to top left, $PrimaryColor, $SecondaryColor);
+      // right: 0;
+      // rght: -300px;i
+    }
+   
+
+    li {
+      margin-right: 20px;
+
+      @include mobile{
+        margin: 20px 0;
+      }
+    }
+  }
+  .Open{
+    right: 0;
+
+    @include mobile{
+      right: 0;
+    }
+  }
+}
+.areaOne {
+  @include flexes(flex, space-between, center, row);
+  width: 100%;
+  background: $PrimaryColor;
+  padding: 20px 40px;
+
+  @include mobile{
+    @include flexes(flex, space-between, center, column-reverse);
+    padding: 25px;
+  }
+  .Second{
+    background: url(../Component/image/cargif.webp);
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+    animation: guy_animate 5s ease infinite 1s;
+  }
+
+  div {
+    width: 40%;
+    height: 100%;
+    @include flexes(flex, center, flex-start, column);
+
+    @include Tablet{
+      // background: red;
+      width: 50%;
+
+      h1{
+        font-size: 30px;
+        font-weight: 700;
+      }
+    }
+
+    @include mobile{
+      width: 100%;
+      height: 40%;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 25px;
+      font-weight: 500;
+
+      @include mobile{
+        font-size: 17px;
+      font-weight: 400;
+      margin-bottom: 10px
+      }
+    }
+  }
+}
+
+.we-are {
+  @include flexes(flex, space-between, center, row);
+  width: 100%;
+  padding: 20px 40px;
+  height: 450px;
+  border: 2px soild blue;
+
+  @include mobile{
+    @include flexes(flex, space-between, center, column-reverse);
+    margin-top: 3%;
+    height: 750px;
+  }
+
+  div {
+    width: 40%;
+    height: 100%;
+
+    @include Tablet{
+      width: 45%;
+    }
+    
+    @include mobile{
+      width: 100%;
+  
+    
+    }
+  }
+
+  .First {
+    @include flexes(flex, center, flex-start, column);
+    background-color: $SecondaryColor;
+    padding: 20px;
+    border-top-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+
+    @include mobile{
+      // padding: 2px;
+      height: 50%;
+      // text-align: ;
+      margin-top: 20px;
+    }
+h1{
+  margin-bottom: 5px;
+}
+    h3 {
+      margin-top: 20px;
+
+      @include mobile{
+        margin-top: 0;
+      }
+    }
+    small{
+      font-size: 15px;
+    }
+  }
+
+  .div2 {
+    background: url(../Component/image/bikeman.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    animation: guy_animate 3s ease infinite 1s;
+  }
+
+  @keyframes guy_animate {
+    0%{
+      transform: translateY(-10px);
+      border-radius: 10px;
+    }
+    50%{
+      transform: translateY(-3px);
+      border-radius: 25px;
+    }
+    100%{
+      transform: translateY(-10px);
+      border-radius: 10px;
+    }
+  }
+}
+
+.main {
+  width: 100%;
+  padding: 20px 40px;
+  margin-bottom: 20px;
+
+  .threeItems {
+    padding: 20px;
+    width: 100%;
+    @include flexes(flex, space-between, center, row);
+    background: $PrimaryColor;
+    border-radius: 10px;
+
+    @include mobile{
+      @include flexes(flex, space-between, center, column);
+    }
+
+    .child {
+      @include flexes(flex, center, flex-start, column);
+      width: 30%;
+
+      @include mobile{
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .numbers {
+        @include flexes(flex, center, center, row);
+
+        span {
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.how-work {
+  width: 100%;
+  padding: 20px 40px;
+  background: $PrimaryColor;
+  text-align: center;
+
+  h1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 600;
+    
+  }
+
+  .works {
+    @include flexes(flex, space-between, center, row);
+    flex-wrap: wrap;
+    width: 100%;
+    height: 60%;
+    margin-top: 20px;
+
+    @include Tablet{
+      flex-wrap: wrap
+    }
+
+    @include mobile{
+      @include flexes(flex, space-between, center, column);
+    }
+
+    .child {
+      width: 30%;
+      height: 300px;
+      background-color: $SecondaryColor;
+      // background: red;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      padding: 20px;
+
+      @include Tablet{
+        width: 48%;
+      }
+
+      @include mobile{
+        width: 100%
+      }
+
+      @include flexes(flex, center, center, column);
+
+      h3 {
+        font-size: 25px;
+        margin-bottom: 20px;
+
+        @include mobile{
+          margin-bottom: 10px;
+        }
+      }
+
+      p {
+        font-size: 15px;
+        color: whitesmoke;
+
+        @include Tablet{
+          line-break: auto;
+        }
+      }
+    }
+  }
+
+  .others {
+    width: 100%;
+    height: 40%;
+    text-align: right;
+    @include flexes(flex, center, flex-end, column);
+    position: relative;
+    margin-top: 10%;
+
+    @include mobile{
+      @include flexes(flex, center, flex-start, column);
+    }
+
+    .storage {
+      width: 40%;
+      z-index: 2;
+      text-align: left;
+      position: relative;
+   
+
+      @include Tablet{
+        width: 60%;
+      }
+      // border: 2px solid green;
+
+      @include mobile{
+        width: 100%;
+      }
+
+      .sub {
+        position: absolute;
+        top: 80%;
+        width: 400px;
+        height: 400px;
+        left: -70%;
+        background: whitesmoke;
+        border: 2px solid;
+        // border-radius: 15px;
+        padding: 20px;
+        border-top-left-radius: 20%;
+        border-bottom-right-radius: 20%;
+        @include flexes(flex, center, center, column);
+
+        @include Tablet{
+          top: 60%;
+          left: -50%;
+        }
+
+        @include mobile{
+          display: none;
+          top: 75%;
+          padding: 20px;
+          width: 330px;
+          height: 400px;
+          right: 13px;
+          padding: 15px;
+        }
+
+        h2 {
+          margin-bottom: 20px;
+
+          @include mobile{
+            margin-bottom: 10px;
+            font-size: 21px;
+          }
+        }
+
+        p {
+          font-size: 17px;
+
+          @include mobile{
+            font-size: 16px;
+          }
+        }
+      }
+
+      img {
+        width: 80%;
+        height: 450px;
+        overflow: hidden;
+        object-fit: cover;
+        border-radius: 15px;
+        animation: guy_animate 5s ease infinite 1s;
+
+        @include Tablet{
+          width: 80%;
+        }
+
+        @include mobile{
+          width: 90%;
+          height: 350px;
+        }
+      }
+
+      h1 {
+        width: 100%;
+        text-align: left;
+      }
+    }
+    .circle {
+      background-color: whitesmoke;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      position: absolute;
+      top: 5%;
+      right: 0;
+      z-index: 1;
+      box-shadow: $Shadow;
+
+      @include mobile{
+        
+        width: 150px;
+        height: 150px;
+        right: -30px;
+        top: 7%;
+        animation: circle_animate 5s ease infinite 1s;
+      }
+    }
+    @keyframes circle_animate {
+      0%{
+        transform: translateY(-10px);
+        // border-radius: 10px;
+      }
+      50%{
+        transform: translateY(-5px);
+        // border-radius: 25px;
+      }
+      100%{
+        transform: translateY(-10px);
+        // border-radius: 10px;
+      }
+    }
+  }
+}
+
+.section-form {
+  width: 100%;
+  height: 100vh;
+  @include flexes(flex, center, center, row);
+
+  .error{
+    margin-bottom: 5px;
+    color: red;
+    background-color: $PrimaryColor;
+    padding: 7px;
+    width: 100%;
+    font-size: 18px;
+    text-align: left;
+  }
+  .form {
+    padding: 20px;
+    border-radius: 10px;
+    background: whitesmoke;
+    box-shadow: 0px 6px 15px rgba(119, 118, 118, 0.15);
+    text-align: center;
+    // @include flexes(flex, center, space-between, column);
+    .name,
+    .email {
+      width: 100%;
+      margin-bottom: 10px;
+      @include flexes(flex, center, flex-start, column);
+      // display: flex;
+      // align-items: flex-start;
+      // justify-content: center;
+      // flex-direction: column;
+
+     label{
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 7px;
+      }
+
+      input {
+        font-size: 20px;
+        padding: 10px;
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 7px;
+      }
+    }
+  
+    button{
+        padding: 10px 0;
+        width: 100%;
+        margin: 5px 0;
+        text-align: center;
+        font-size: 19px;
+        border-radius: 5px;
+        background: $PrimaryColor;
+        border: none;
+
+        &:hover{
+          background: $SecondaryColor;
+          color: whitesmoke;
+          cursor: pointer;
+        }
+    }
+    .forgotten{
+      font-size: 17px;
+      font-weight: 500;
+    }
+  
+  }
+}
+
+
+// styling of dashBoard
+
+.navBarss{
+  width: 100%;
+  padding: 20px;
+  background: $PrimaryColor;
+  box-shadow: $Shadow;
+  position: relative;
+  transition: 1s;
+
+
+  .dashLinks{
+    width: 300px;
+    height: 100vh;
+    background: $PrimaryColor;
+    box-shadow: $Shadow;
+    list-style-type: none;
+    @include flexes(flex, center, center, column);
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    // flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 1.5s;
+    
+
+    li{
+      margin: 20px 0;
+
+      .leenks{
+        text-decoration: none;
+        font-size: 20px;
+
+      }
+    }
+
+    .cancel{
+      position: absolute;
+      top: 7%;
+      right: 10%;
+    }
+  }
+}
+.other{
+  display: none;
+  top: 0;
+  left: -300;
+  transition: width 1s;
+  margin-bottom: 20%;
+}
+.family{
+  margin-top: 23%;
+  width: 100%;
+  // text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  flex-direction: column;
+  background: $PrimaryColor;
+
+  @include mobile{
+    padding: 25px;
+    // margin-top: 65%;
+  }
+}
+.Question{
+  background: $SecondaryColor;
+  border-radius: 10px;
+  padding: 15px;
+  width: 500px;
+  overflow: hidden;
+  // text-align: center;
+  // align-items: center;
+  // display: flex;
+  margin-bottom: 20px;
+
+
+  @include mobile{
+    width: 100%;
+  }
+
+  .innerOne{
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+   padding: 10px 0;
+  
+  }
+  .note{
+    text-align: left;
+
+  }
+}
+.Question:last-child{
+  margin: 0;
+}
+
+footer{
+  padding: 20px 60px ;
+  background: $SecondaryColor;
+  margin-top: 10%;
+
+  @include mobile{
+    padding: 25px;
+  }
+
+  .footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+
+    @include mobile{
+      flex-wrap: wrap;
+    }
+  
+    ul{
+      width: 25%;
+      height: 100%;
+      list-style-type: none;
+
+      @include mobile{
+        width: 45%;
+        height: 25%;
+        margin-bottom: 20px;
+      }
+  
+      li{
+        text-align: left;
+        margin-bottom: 10px;
+        .navigate{
+          text-decoration: none;
+          font-size: 20px;
+          font-weight: 400;
+          color: gray;
+        }
+        .navigate:hover{
+          color: $PrimaryColor;
+        }
+      }
+    }
+  }
+  
+}
+.Compound{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 60px;
+
+  
+  @include Tablet{
+    padding: 0 40px;
+  }
+
+  @include mobile{
+    flex-direction: column;
+    padding: 0 40px;
+  }
+}
+.align{
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+.product{
+  text-align: center;
+  width: 30%;
+  // height: 400px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  box-shadow: $Shadow;
+  margin: 20px 0;
+  padding: 20px;
+  overflow: hidden;
+
+  @include Tablet{
+    flex-wrap: wrap;
+    width: 48%;
+      }
+
+  @include mobile{
+width: 100%;
+  }
+
+  button{
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: none;
+    background: $SecondaryColor;
+    margin-top: 10px;
+
+
+  .leynks{
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+  }
+  }
+
+  img{
+    width: 100%;
+    height: 250px;
+    display: block;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+  }
+
+  h3{
+    margin-bottom: 15px;
+  }
+}
+#Compound{
+  padding: 0 40px;
+
+  @include mobile{
+    padding: 0 30px;
+  }
+}
+#product{
+  text-align: left;
+  font-size: 23px;
+  width: 100%;
+  // height: 400px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  box-shadow: $Shadow;
+  margin: 20px 0;
+  padding: 20px;
+  overflow: hidden;
+
+  @include mobile{
+    padding: 10px;
+
+  }
+
+  p{
+    font-size: 22px;
+
+    @include mobile{
+      font-size: 18px;
+    }
+
+    .readmore{
+      border: none;
+      background: none;
+      font-size: 18px;
+      margin: 0;
+      color: green;
+
+      @include mobile{
+       border: none;
+      }
+    }
+  }
+
+  img{
+    width: 40%;
+    height: 250px;
+    display: block;
+    margin: 20px 0;
+
+    @include Tablet{
+      width: 65%;
+      height: 200px;
+    }
+
+
+    @include mobile{
+      width: 100%;
+    }
+
+  }
+
+  button{
+    background-color: $SecondaryColor;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 7px;
+    margin: 20px 20px 20px 0;
+
+    @include mobile{
+      margin-bottom: 5px;
+    }
+    .leinks{
+      text-decoration: none;
+      text-transform: capitalize;
+      font-size: 20px;
+      color: white;
+
+    }
+  }
+
+
+}
+
+.user{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+
+  .cl1{
+    font-size: 50px;
+    color: gray;
+  }
+}
+.map{
+  width: 100%;
+  height: 80vh;
+  background: $SecondaryColor;
+  text-align: center;
+  padding: 20px 40px;
+
+  @include Tablet{
+    padding: 25px;
+    height: 550px;
+  }
+
+  @include mobile{
+    padding: 25px;
+    height: 450px;
+  }
+  
+
+
+  iframe{
+    width: 100%;
+    height: 100%;
+    box-shadow: $Shadow;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+}
+.box1{
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  // flex-direction: column;
+
+  @include mobile{
+    padding: 0 20px;
+  }
+
+  .bookings{
+    width: 400px;
+    padding: 20px;
+    box-shadow: $Shadow;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    background: $PrimaryColor;
+
+    input{
+      width: 100%;
+      // height: 30px;
+      outline: none;
+      border: none;
+      border-bottom: 2px solid $SecondaryColor;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  }
+}
+.success{
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: green;
+}
+.error2{
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  color: red;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+.sumit{
+  padding: 10px;
+  background: $SecondaryColor;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 20px;
+  color: whitesmoke;
+}
+.sumit:hover{
+  color: gray;
+  cursor: pointer;
+}
+.position{
+  width: 100%;
+  padding: 10px 40px;
+
+
+  span{
+    color: gray;
+    font-weight: 500;
+    font-size: 25px;
+    text-transform: capitalize;
+  }
+}
+
+.maining{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: $PrimaryColor;
+
+  @include mobile{
+    padding: 0 35px;
+  }
+
+  h2{
+    font-size: 30px;
+    color: whitesmoke;
+    text-shadow: $Shadow2;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+}
+.loading{
+  padding: 20px;
+  width: 365px ;
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  flex-direction: row;
+
+  @include mobile{
+      width: 100%;
+  }
+  // position: relative;
+
+  .stroke1, 
+  .stroke2{
+    width: 50px;
+    height: 100px;
+    background: $SecondaryColor;
+
+    @include mobile{
+      width: 40px;
+    }
+  }
+  .stroke1{
+    animation: stroke1_animate 1s ease infinite .5s;
+  }
+    @keyframes stroke1_animate{
+    0%{
+      height: 50px;
+ 
+    }
+    50%{
+      height: 100px;
+    }
+    100%{
+      height: 50px;
+    }
+  }
+
+  .stroke2{
+    animation: stroke2_animate 1s ease infinite .5s;
+  }
+  @keyframes stroke2_animate{
+    0%{
+      height: 100px;
+ 
+    }
+    50%{
+      height: 50px;
+    }
+    100%{
+      height: 100px;
+    }
+  }
+ 
+
+  // .round-circle{
+  //   width: 50px;
+  //   position: absolute;
+  //   height: 50px;
+  //   background: whitesmoke;
+  //   box-shadow: $Shadow;
+  //   border-radius: 50%;
+  //   // animation: round_animate 1s ease infinite 1.5s;
+  // }
+
+}
+.ridehistory{
+  margin-top: 7%;
+  width: 100%;
+  text-align: center;
+  padding: 20px 40px;
+
+  h3{
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: left;
+    color: $NeutralColor;
+  }
+  button{
+    padding: 10px 20px;
+    
+    background: $SecondaryColor;
+    text-align: center;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 20px;
+    margin-top: 3%;
+    color: $NeutralColor;
+    cursor: pointer;
+  }
+  button:hover{
+    box-shadow: $Shadow;
+    background: $PrimaryColor;
+    color: whitesmoke;
+    text-shadow: $Shadow2;
+  }
+ 
+  ul{
+    box-shadow: $Shadow;
+    background: $PrimaryColor;
+    width: 100%;
+    list-style-type: none;
+
+    li{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 25px;
+
+
+      @include mobile{
+        // flex-wrap: wrap;
+        position: relative;
+        align-items: flex-start;
+        margin-bottom: 25px;
+        // padding-right: 35px;
+        overflow: hidden;
+        flex-direction: column;
+        text-align: left;
+    
+      }
+
+      span{
+        font-size: 19px;
+        font-weight: 500;
+
+        @include mobile{
+          margin-bottom: 25px;
+        }
+      }
+
+      .delete{
+        color: red;
+        font-size: 20px;
+
+        @include mobile{
+         position: absolute;
+         top: 10px;
+         right: 10px;
+        }
+
+      }
+    }
+  }
+}
+.ourTeam{
+  width: 100%;
+  height: 500px;
+  border-bottom: 2px solid gray;
+  background: rgb(236, 233, 233);
+
+
+  .TeamBackground{
+    width: 100%;
+    height: 96%;
+    // background: ;
+    // background: linear-gradient(to top left, gray, whitesmoke) url(../../public/Bike.jpg);
+    
+    background:linear-gradient(rgba(0,0,0,0.5), $SecondaryColor),url(../../public/Bike.jpg);
+    background-size: auto;
+    background-position: bottom 30%;
+    object-fit: fill;
+    border-bottom-left-radius: 45%;
+    border-bottom-right-radius: 45%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+
+    @include mobile{
+      border-bottom-left-radius: 45%;
+      border-bottom-right-radius: 45%;
+      background-size: cover;
+      background-position: top 20%;
+      padding: 0 15px;
+    }
+
+    h2{
+      font-size: 35px;
+      // margin-top: 10%;
+    }
+    p{
+      font-size: 20px;
+      margin-top: 2%;
+      
+
+      @include mobile{
+        margin-bottom: 20px;
+      }
+    }
+
+    button{
+      padding: 10px 20px;
+      border: none;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      font-size: 20px;
+      color: whitesmoke;
+      cursor: pointer;
+      background: $SecondaryColor;
+      margin-top: 2%;
+    }
+  }
+}
+.Drivers{
+  width: 100%;
+  // height: 700px;
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 76%, 0% 100%);
+  background: $PrimaryColor;
+  // padding-top: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 0;
+
+  @include mobile{
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+  }
+  // padding-bottom: 60px;
+  // box-shadow: $Shadow2;
+  // border-bottom: 2px solid green;
+
+  .detailled{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    p{
+      margin-bottom: 20px;
+    }
+
+    button{
+      margin-bottom: 15%;
+      padding: 10px 20px;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border: none;
+      background: $SecondaryColor;
+      font-size: 20px;
+      color: white;
+      text-shadow: $Shadow2;
+
+      @include mobile{
+        margin-bottom: 25%;
+      }
+    }
+
+    h1{
+      width: 100%;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 60px;
+
+      @include mobile{
+        font-size: 40px;
+      }
+    }
+
+    .detImg{
+      width: 250px;
+      height: 250px;
+      overflow: hidden;
+      animation: profile_animatte 8S ease-in-out infinite 1s;
+      margin-bottom: 20px;
+
+      img{
+        width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+  }
+  @keyframes profile_animatte{
+    0% {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+    50% {
+      border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    100% {
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+  }
+}
+.Gees{
+  width: 100%;
+  // height: 700px;
+  clip-path: polygon(0 30%, 100% 0, 100% 100%, 0% 100%);
+  background: linear-gradient(to top left, $PrimaryColor, $SecondaryColor);
+  padding: 20px 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include mobile{
+    clip-path: polygon(0 32%, 100% 0, 100% 100%, 0% 100%);
+    padding:  20px;
+  }
+
+  button{
+    // margin-bottom: 15%;
+    padding: 10px 20px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: none;
+    background: $SecondaryColor;
+    font-size: 20px;
+    color: white;
+    text-shadow: $Shadow2;
+    margin-top: 5%;
+  }
+
+  h1{
+    width: 100%;
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 5%;
+
+    @include mobile{
+      margin-top: 45%;
+    }
+  }
+
+  .omoAlaye{
+    width: 100%;
+    // background: red;
+    // height: ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    #myswiper{
+      width: 100%;
+      // background: orange;
+      .swiper-pagination-bullet{
+        width: 25px;
+        height: 5px;
+        border-radius: 0;
+        background: rgb(165, 37, 165);
+      }
+      .swipers{
+        width: 50%;
+        height: 200px;
+
+        // @include Tablet{
+        //   // width: 100px;
+        //   padding: 20px;
+        //   background: red;
+        // }
+     
+
+        @include mobile{
+          width: 100%;
+          height: 200px;
+        }
+
+      
+        // background: blue;
+      }
+      .iteems{
+        padding:40px;
+        width: 350px;
+        background: whitesmoke;
+        box-shadow: $Shadow;
+
+        @include Tablet{
+          // width: 100px;
+          width: 95%;
+          padding: 20px;
+          // background: red;
+        }
+
+        @include mobile{
+          width: 90%;
+          padding: 20px;
+        }
+        
+       
+      }
+
+    }
+
+
+  }
+}
+
+
+.Realgees{
+  padding: 20px 60px;
+  width: 100%;
+  text-align: center;
+
+  @include mobile{
+    padding: 25px;
+  }
+
+  p{
+    font-weight: 500;
+  }
+
+  .Mygeehs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+
+    @include Tablet{
+      // background: blue;
+    }
+
+    div{
+      width: 30%;
+      text-align: center;
+      background: $SecondaryColor;
+      padding: 15px;
+      box-shadow: $Shadow;
+      border-top-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      transition: transform 1s;
+
+      @include Tablet{
+        // background: red;
+        // width: 40%;
+        padding: 10px;
+      }
+
+      @include mobile{
+        width: 90%;
+        padding: 10px;
+      }
+
+      img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: inline-block;
+        align-items: center;
+        object-fit: cover;
+
+        @include mobile{
+          align-items: flex-start;
+          width: 60px;
+          height: 60px;
+        }
+      }
+      h4{
+        margin-bottom: 20px;
+
+        @include mobile{
+          margin-bottom: 10px;
+        }
+      }
+    }
+    div:hover{
+      transform: translateY(-10px);
+    }
+  }
+  
+  h1{
+    text-align: center;
+  }
+}
